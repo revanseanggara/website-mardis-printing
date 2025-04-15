@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/produk.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+       <style>
+        /* Navbar Styles */
+/* Tetap pertahankan styling utama */
+/* Tetap pertahankan styling utama */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo img {
+  height: 50px;
+}
+
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.category-search {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.search-bar {
+  display: flex;
+  width: 100%;
+}
+
+/* Select */
+.category-select {
+  padding: 0.8rem 1rem;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-right: none;
+  background-color: #f0f0f0;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+/* Hover select */
+.category-select:hover {
+  background-color: #e6e6e6;
+}
+
+/* Input */
+.search-bar input {
+  padding: 0.8rem 1.2rem;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  font-size: 16px;
+  outline: none;
+  border-radius: 0;
+  background-color: #fff;
+  flex: 1;
+}
+
+/* Button */
+.search-btn {
+  padding: 0 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-left: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn i {
+  font-size: 18px;
+  color: #333;
+}
+
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .search-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .category-search {
+    padding: 0;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .category-select,
+  .search-bar input,
+  .search-btn {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+
+  .search-btn {
+    padding: 0.8rem;
+    justify-content: center;
+  }
+
+  .search-btn i {
+    font-size: 20px;
+  }
+}
+
+
+.category-list {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Bayangan lembut */
+  transition: box-shadow 0.3s ease;
+}
+
+.category-list:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Efek saat hover */
+}
+
+.category-list h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.category-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list ul li {
+  margin-bottom: 0.75rem;
+}
+
+.category-list ul li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.category-list ul li a:hover {
+  color: #d42c2c;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+  <div class="top-nav">
+    <!-- LOGO -->
+
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="category-search">
+            <div class="search-bar">
+                <select class="category-select">
+                    <option value="">Semua Kategori</option>
+                    <option value="kartu-nama">Kartu Nama</option>
+                    <option value="brosur">Brosur</option>
+                    <option value="stiker">Stiker</option>
+                    <option value="banner">Banner</option>
+                </select>
+                <input type="text" placeholder="Cari Produk...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="nav-links">
+    <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+    <a href="produk.html"><i class="fas fa-cogs"></i> PRODUK</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="tentang-kami.html"><i class="fas fa-info-circle"></i> TENTANG KAMI</a>
+</div>
+    </nav>
+
+    <!-- Hero section diletakkan di luar navbar -->
+    <div class="hero-section">
+    </div>
+</header>
+
+
+
+
+
+<main>
+    <!-- Section 1 -->
+<div class="grid-container">
+    <div class="box-row">
+        <!-- Box besar kiri -->
+     <div class="large-box-left animate-on-scroll category-list">
+  <h2>Kategori</h2>
+  <ul>
+    <li class="category-toggle">
+      <a href="#">Undangan <span class="arrow">▼</span></a>
+      <ul class="subcategory">
+        <li><a href="#">Undangan Nikah</a></li>
+        <li><a href="#">Undangan Ulang Tahun</a></li>
+        <li><a href="#">Undangan Digital</a></li>
+      </ul>
+    </li>
+    <li class="category-toggle">
+      <a href="#">Brosur <span class="arrow">▼</span></a>
+      <ul class="subcategory">
+        <li><a href="#">Brosur A4</a></li>
+        <li><a href="#">Brosur Lipat 3</a></li>
+      </ul>
+    </li>
+    <li class="category-toggle">
+      <a href="#">Banner <span class="arrow">▼</span></a>
+      <ul class="subcategory">
+        <li><a href="#">Banner 60x160</a></li>
+        <li><a href="#">Banner Outdoor</a></li>
+      </ul>
+    </li>
+    <li class="category-toggle">
+      <a href="#">Stiker <span class="arrow">▼</span></a>
+      <ul class="subcategory">
+        <li><a href="#">Stiker Label</a></li>
+        <li><a href="#">Stiker Vinyl</a></li>
+      </ul>
+    </li>
+    <li class="category-toggle">
+      <a href="#">Kartu Nama <span class="arrow">▼</span></a>
+      <ul class="subcategory">
+        <li><a href="#">Kartu Nama Standar</a></li>
+        <li><a href="#">Kartu Nama Premium</a></li>
+      </ul>
+    </li>
+    <li class="category-toggle">
+      <a href="#">Kalender <span class="arrow">▼</span></a>
+      <ul class="subcategory">
+        <li><a href="#">Kalender Meja</a></li>
+        <li><a href="#">Kalender Dinding</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+        <!-- Box kecil kanan -->
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-1.jpg" alt="Box 1">
+            </div>
+            <div class="white-area"></div>
+        </a>
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-2.jpg" alt="Box 2">
+            </div>
+            <div class="white-area"></div>
+        </a>
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-3.jpg" alt="Box 3">
+            </div>
+            <div class="white-area"></div>
+        </a>
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-4.jpg" alt="Box 4">
+            </div>
+            <div class="white-area"></div>
+        </a>
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-5.jpg" alt="Box 5">
+            </div>
+            <div class="white-area"></div>
+        </a>
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-6.jpg" alt="Box 6">
+            </div>
+            <div class="white-area"></div>
+        </a>
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-7.jpg" alt="Box 7">
+            </div>
+            <div class="white-area"></div>
+        </a>
+        <a href="link-tujuan.html" class="small-box animate-on-scroll">
+            <div class="image-area">
+                <img src="images/produk-8.jpg" alt="Box 8">
+            </div>
+            <div class="white-area"></div>
+        </a>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Mardis Printing</h3>
+                    <p>
+                        Solusi cetak terbaik untuk kebutuhan bisnis dan pribadi Anda. Kami
+                        menghadirkan kualitas tinggi dengan harga terbaik.
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/mardis_printing" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/nama_akunmu" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/nama_akunmu" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/nama_akunmu" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/c/nama_akunmu" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Home</h3>
+                    <ul>
+                        <li><a href="#">Bantuan</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                        </li>
+                        <li><i class="fas fa-phone"></i> 1800 525 34 17</li>
+                        <li>
+                            <i class="fas fa-envelope"></i> support@mardisprinting.com
+                        </li>
+                        <li><i class="fas fa-clock"></i> Mon - Sat: 8am - 7pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-icons">
+
+                    <!-- Tambahan e-wallet Indonesia -->
+                    <div class="payment-icons">
+                        <img src="/images/bca.png" alt="BCA" />
+                        <img src="/images/bri.png" alt="BRI" />
+                    </div>
+                </div>
+                <p>Copyright &copy; 2025 Mardis Printing, All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  // Scroll animation
+  const elements = document.querySelectorAll('.animate-on-scroll');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+
+  // Dropdown toggle
+  document.querySelectorAll('.category-toggle').forEach(item => {
+    const arrow = item.querySelector('.arrow');
+    const submenu = item.querySelector('.subcategory');
+
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      arrow.classList.toggle('rotate');
+    });
+  });
+</script>
+
+
+    <script>
+    let lastScroll = 0;
+    const navLinks = document.querySelector('.nav-links');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScroll) {
+            // Scroll ke bawah -> sembunyikan nav links
+            navLinks.style.opacity = '0';
+            navLinks.style.pointerEvents = 'none';
+        } else {
+            // Scroll ke atas -> tampilkan nav links
+            navLinks.style.opacity = '1';
+            navLinks.style.pointerEvents = 'auto';
+        }
+
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+
+
+    <script>
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            // Scroll ke bawah -> sembunyikan navbar
+            navbar.classList.remove('nav-visible');
+            navbar.classList.add('nav-hidden');
+        } else {
+            // Scroll ke atas -> tampilkan navbar
+            navbar.classList.remove('nav-hidden');
+            navbar.classList.add('nav-visible');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+</script>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Memilih semua elemen dengan kelas 'animate-on-scroll'
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+    // Membuat IntersectionObserver untuk mendeteksi elemen yang masuk dan keluar dari viewport
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // Menambahkan atau menghapus kelas 'visible' saat elemen masuk atau keluar viewport
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, {
+        threshold: 0.1 // Elemen dianggap masuk viewport jika 10% atau lebih terlihat
+    });
+
+    // Mengamati setiap elemen yang memiliki kelas 'animate-on-scroll'
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+});
+
+
+
+    </script>
+</body>
+</html>
